@@ -43,7 +43,7 @@ public class BrainfuckEngine {
     }
 
     /**
-     * @ author Jonas Uekötter
+     * @ author Jonas Uekoetter
      * BrainfuckException
      */
     public class BrainfuckException extends Exception{

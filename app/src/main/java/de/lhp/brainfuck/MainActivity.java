@@ -1,5 +1,5 @@
 /**
- * Copyright 2014 Jonas Uekoetter
+ * Copyright 2015 Jonas Uekoetter
  *
  * Licensed under the Apache License,Version2.0(the"License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements BrainfuckEngine.B
     private EditText consoleInput;
     private EditText sourceCodeEditText;
     private BrainfuckEngine brainfuckEngine;
+    private String helloWorld = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +61,10 @@ public class MainActivity extends AppCompatActivity implements BrainfuckEngine.B
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch(item.getItemId()){
+            case R.id.action_settings:
+                Toast.makeText(this, R.string.no_settings_yet,Toast.LENGTH_SHORT).show(); return true;
+            case R.id.action_hello_world: sourceCodeEditText.setText(helloWorld); return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements BrainfuckEngine.B
         // no checks, yolo
         // todo make proper sanity checks for the input "console"
         if(consoleInput.getText().toString().isEmpty()){
-            return 0;
+            return '0';
         }
         return consoleInput.getText().charAt(0);
     }

@@ -34,7 +34,8 @@
         android:layout_height="wrap_content"
         android:lines="8"
         android:id="@+id/source_code_edittext"
-        android:background="@color/divider"/>
+        android:hint="@string/source_code_hint"
+        android:minLines="4"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:lines="1"
         android:id="@+id/input_edittext"
-        android:background="@color/divider"/>
+        android:inputType="text"/>
 
     <TextView
         android:layout_width="wrap_content"
